@@ -1,0 +1,124 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
+#corpo{
+    background-color: #343a4b;
+    font-family: 'Montserrat', sans-serif;
+}
+#calc-png{
+    margin: 20px;
+}
+#mudar-tema{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1d1d99;
+    cursor: pointer;
+}
+#troca-tema{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #238ee6;
+    cursor: pointer;
+    margin-left: -30px;
+    display: none;
+}
+#tema{
+    display: flex;
+    justify-content: center;
+}
+#texto-tema{
+    margin: 7px;
+}
+#section{
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    background-color: #464649;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 0px 0px 30px #000000;
+}
+#resposta{
+    margin-bottom: 0px;
+}
+#res{
+    border-style: none ;
+    height: 100px;
+    width: 290px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #464649;
+    font-size:4vh;          
+    display: flex;
+    align-items: center;   
+    justify-content: right;  
+}
+#click{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px 3px 10px;
+}
+#x{
+    font-size: 0.8em;
+    color: #464649 ;
+    background-color: #000000;
+    cursor: pointer;
+    border-radius: 5px 0px 5px 0px;
+    width: 20px;
+}
+#apagar{
+    cursor: pointer;
+}
+.botao{
+    width: 75px;
+    height: 65px;
+    border-color: #040405;
+    font-size: 2vh;
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d9900 ;
+    cursor: pointer;
+}
+.botao:hover{
+    background-color: #238ee6 ;
+    color: #ffffff;
+    transition: 0.1s;
+}
+#flexbox{
+    background-color: #1d1d99;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#igual{
+    background-color: #970808;
+}
+#igual:hover{
+    background-color: #6d0909;
+}
+#nomecalc{
+    padding: 5px;
+}
+#nome{
+    padding: 2px;
+    font-weight: 700;
+}
+#renan{
+    text-align: center;
+    margin: 50px;
+}
+#renan a {
+    color: #1577af;
+    text-decoration: none;
+}
+#mat{
+    text-align: right;
+    margin: 20px;
+}
