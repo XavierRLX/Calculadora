@@ -7,6 +7,7 @@
 #corpo{
     background-color: #343a4b;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
 }
 #calc-png{
     margin: 20px;
@@ -62,17 +63,23 @@
     display: flex;
     justify-content: space-between;
     margin: 0px 10px 3px 10px;
+    background-color: #000000;
 }
 #x{
     font-size: 0.8em;
-    color: #464649 ;
-    background-color: #000000;
+    color: #fafafa ;
     cursor: pointer;
     border-radius: 5px 0px 5px 0px;
     width: 20px;
 }
 #apagar{
     cursor: pointer;
+    font-size: 0.8em;
+    color: #ffffff ;
+
+    cursor: pointer;
+    border-radius: 50% 0px 0px 50%;
+    width: 20px;
 }
 .botao{
     width: 75px;
@@ -96,6 +103,7 @@
     background-color: #1d1d99;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    font-weight: 550;
 }
 #igual{
     background-color: #970808;
