@@ -1,2 +1,2 @@
 # calculadora
- calculadora ujsando tema escuro e claro
+ calculadora usando tema escuro e claro.
