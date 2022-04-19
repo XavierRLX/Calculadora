@@ -3,6 +3,7 @@ function insert (num) {
   var numero = document.getElementById('res').innerHTML;
   document.getElementById('res').innerHTML = numero + num;
 }
+
 function clean(){
     document.getElementById('res').innerHTML = ""
 }
@@ -34,6 +35,7 @@ temax.addEventListener('click', clicar)
 troca.addEventListener('click', trocar)
 
 function clicar(){
+    numeros.style.backgroundColor = "#238ee6"
     troca.style.display = 'inline'
     bts.style.backgroundColor = '#f50d0d'
     todos.style.backgroundColor = '#3737f3'
@@ -41,7 +43,7 @@ function clicar(){
     re.style.backgroundColor = '#c8c8d8'
     re.style.textDecorationColor = '#c8c8d8'
     xs.style.textDecorationColor = '#c8c8d8'
-    corp.style.backgroundColor = '#97adf0'
+    corp.style.backgroundColor = '#ffffff'
 
 }
 function trocar(){
