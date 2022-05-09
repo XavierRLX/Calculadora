@@ -35,7 +35,6 @@ temax.addEventListener('click', clicar)
 troca.addEventListener('click', trocar)
 
 function clicar(){
-    numeros.style.backgroundColor = "#238ee6"
     troca.style.display = 'inline'
     bts.style.backgroundColor = '#f50d0d'
     todos.style.backgroundColor = '#3737f3'
