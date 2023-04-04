@@ -13,6 +13,8 @@
             <img src="matematica.png">
         </div>
 
+        
+
         <div class="switch">
             <input type="checkbox" id="switch" />
             <label for="switch"></label>
@@ -23,9 +25,12 @@
             <div id="resposta">
                 <p id="res" ></p>
             </div>
+            <div>
+            <img id="btnHistorico" src="historia.png" alt="btn_historico">
+        </div>
             <div id="click">
                 <p id="x" onclick="clean()"> C </p>
-                <p id="apagar" onclick="back()"> X </p>
+                <p id="apagar" onclick="back()">X</p>
             </div>
             <div id="flexbox">
                 <p  class="botao" onclick="insert('7')" > 7 </p>
@@ -50,9 +55,11 @@
             </div>
         </section>
     </div>
+    <div id="historico"></div>
     <footer>
         <div id="renan"><h2>Desenvolvido por <a target="_blanck" href="https://xavierrlx.github.io/portifolio/">Renan Xavier</a></h2></div>
     </footer>
-    <script src="calc.js"></script>
+    <script src="JS/calc.js"></script>
+    <script src="JS/tema.js"></script>
 </body>
 </html>
