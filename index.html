@@ -10,51 +10,49 @@
 <body id="corpo">
     <header>
         <div id="calc-png">
-            <img src="calculadora.png">
+            <img src="matematica.png">
         </div>
-    </header>
-    <div id="tema">
-        <p id="texto-tema">Tema</p>
-        <nav id="mudar-tema">
-        </nav>
-        <nav id="troca-tema">
 
-        </nav>
+        <div class="switch">
+            <input type="checkbox" id="switch" />
+            <label for="switch"></label>
+          </div>
+    </header>
+    <div class="centered-div">
+        <section id="section">
+            <div id="resposta">
+                <p id="res" ></p>
+            </div>
+            <div id="click">
+                <p id="x" onclick="clean()"> C </p>
+                <p id="apagar" onclick="back()"> X </p>
+            </div>
+            <div id="flexbox">
+                <p  class="botao" onclick="insert('7')" > 7 </p>
+                <p  class="botao" onclick="insert('8')" > 8 </p>
+                <p  class="botao" onclick="insert('9')" > 9 </p>
+                <p  class="botao" onclick="insert('+')" > + </p>
+                <p  class="botao" onclick="insert('4')" > 4 </p>
+                <p class="botao" onclick="insert('5')" > 5 </p>
+                <p class="botao" onclick="insert('6')" > 6 </p>
+                <p  class="botao" onclick="insert('*')" > * </p>
+                <p class="botao"onclick="insert('1')"  > 1 </p>
+                <p  class="botao" onclick="insert('2')" > 2 </p>
+                <p class="botao" onclick="insert('3')" > 3 </p>
+                <p  class="botao" onclick="insert('-')"> - </p>
+                <p  class="botao" onclick="insert('.')" > . </p>
+                <p class="botao" onclick="insert('0')" > 0 </p>
+                <p  class="botao" onclick="insert('/')" > / </p>
+                <p id="igual" class="botao" onclick="calcular()"> = </p>
+            </div>
+            <div id="nome">
+                <p>Calculadora</p>
+            </div>
+        </section>
     </div>
-    <section id="section">
-        <div id="resposta">
-            <p id="res" ></p>
-        </div>
-        <div id="click">
-            <p id="x" onclick="clean()"> C </p>
-            <p id="apagar" onclick="back()"> X </p>
-        </div>
-        <div id="flexbox">
-            <p  class="botao" onclick="insert('7')" > 7 </p>
-            <p  class="botao" onclick="insert('8')" > 8 </p>
-            <p  class="botao" onclick="insert('9')" > 9 </p>
-            <p  class="botao" onclick="insert('+')" > + </p>
-            <p  class="botao" onclick="insert('4')" > 4 </p>
-            <p class="botao" onclick="insert('5')" > 5 </p>
-            <p class="botao" onclick="insert('6')" > 6 </p>
-            <p  class="botao" onclick="insert('*')" > * </p>
-            <p class="botao"onclick="insert('1')"  > 1 </p>
-            <p  class="botao" onclick="insert('2')" > 2 </p>
-            <p class="botao" onclick="insert('3')" > 3 </p>
-            <p  class="botao" onclick="insert('-')"> - </p>
-            <p  class="botao" onclick="insert('.')" > . </p>
-            <p class="botao" onclick="insert('0')" > 0 </p>
-            <p  class="botao" onclick="insert('/')" > / </p>
-            <p id="igual" class="botao" onclick="calcular()"> = </p>
-        </div>
-        <div id="nome">
-            <p>Calculadora</p>
-        </div>
-    </section> 
-    <div id="renan"><h2>Desenvolvido por <a target="_blanck" href="https://xavierrlx.github.io/sitesrenan/">Renan Xavier</a></h2></div>
-    <div id="mat">
-        <img src="matematica.png" >
-    </div>
+    <footer>
+        <div id="renan"><h2>Desenvolvido por <a target="_blanck" href="https://xavierrlx.github.io/portifolio/">Renan Xavier</a></h2></div>
+    </footer>
     <script src="calc.js"></script>
 </body>
 </html>

@@ -4,6 +4,10 @@
     padding: 0;
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
+header{
+    display: flex;
+    justify-content:space-between ;
+}
 #corpo{
     background-color: #343a4b;
     font-family: 'Montserrat', sans-serif;
@@ -130,3 +134,68 @@
     text-align: right;
     margin: 20px;
 }
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin: 10px;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .switch label {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+  }
+  
+  .switch label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .switch input:checked + label {
+    background-color: #c8c8d8;
+  }
+  .switch input:checked + label:after {
+    transform: translateX(26px);
+    background-color: #000;
+}
+  
+  .switch input:checked + label:after {
+    transform: translateX(26px);
+  }
+  
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.centered-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  
