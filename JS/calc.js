@@ -1,8 +1,15 @@
 
 function insert(num) {
     var numero = document.getElementById('res').innerHTML;
+    if (numero == '' && /[\.\+\-\*\/]/.test(num)) {
+      return;
+    }
     document.getElementById('res').innerHTML = numero + num;
-}
+    if (/[\+\-\*\/]/.test(numero.slice(-1)) && /[\+\-\*\/]/.test(num)) {
+      document.getElementById('res').innerHTML = numero.slice(0, -1) + num;
+    }
+  }
+  
 
 function clean() {
     document.getElementById('res').innerHTML = ""
@@ -25,7 +32,7 @@ function calcular() {
             if (novoResultado.toString().indexOf('.') !== -1) { // verifica se o resultado contém um ponto decimal
                 novoResultado = novoResultado.toFixed(2);
             }
-            historico.innerHTML += resultado + " = " + novoResultado + "<br>"; // Gera o historico //
+            historico.innerHTML += resultado + " = " + novoResultado + "<br>" ; // Gera o historico //
         }
         document.getElementById("res").innerHTML = novoResultado;
     } else {

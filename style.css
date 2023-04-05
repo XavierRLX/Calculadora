@@ -16,6 +16,7 @@ header{
 }
 #calc-png{
     margin: 20px;
+    filter: invert(100%);
 }
 
 #texto-tema{

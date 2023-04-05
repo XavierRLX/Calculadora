@@ -1,3 +1,4 @@
+var imgCalc = document.getElementById('calc-png');
 var switchBtn = document.getElementById('switch');
 var bts = document.getElementById('igual');
 var todos = document.getElementById('flexbox');
@@ -8,6 +9,7 @@ var re = document.getElementById('res');
 var corp = document.getElementById('corpo');
 
 function temaEscuro() {
+  imgCalc.style.filter = "invert(0%)";
   bts.style.backgroundColor = '#f50d0d';
   todos.style.backgroundColor = '#3737f3';
   sec.style.backgroundColor = '#c8c8d8';
@@ -19,6 +21,7 @@ function temaEscuro() {
 }
 
 function temaClaro() {
+  imgCalc.style.filter = "invert(100%)";
   bts.style.backgroundColor = '#970808';
   todos.style.backgroundColor = '#1d1d99';
   sec.style.backgroundColor = '#464649';
