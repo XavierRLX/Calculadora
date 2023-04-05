@@ -25,7 +25,7 @@ function calcular() {
             if (novoResultado.toString().indexOf('.') !== -1) { // verifica se o resultado contém um ponto decimal
                 novoResultado = novoResultado.toFixed(2);
             }
-            historico.innerHTML += resultado + " = " + novoResultado + "<br>" + "<br>"+ "<br>" ; // Gera o historico //
+            historico.innerHTML += resultado + " = " + novoResultado + "<br>"; // Gera o historico //
         }
         document.getElementById("res").innerHTML = novoResultado;
     } else {

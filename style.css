@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
 header{
     display: flex;
+    align-items: center;
     justify-content:space-between ;
 }
 #corpo{
