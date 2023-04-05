@@ -16,33 +16,14 @@ header{
 #calc-png{
     margin: 20px;
 }
-#mudar-tema{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #1d1d99;
-    cursor: pointer;
-}
-#troca-tema{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #238ee6;
-    cursor: pointer;
-    margin-left: -30px;
-    display: none;
-}
-#tema{
-    display: flex;
-    justify-content: center;
-}
+
 #texto-tema{
     margin: 7px;
 }
 #section{
     text-align: center;
     width: 300px;
-    height: 400px;
+    height: 425px;
     background-color: #464649;
     border-radius: 5px;
     margin: auto;
@@ -50,9 +31,6 @@ header{
     box-shadow: 0px 0px 30px #000000;
 }
 #resposta{
-    margin-bottom: 0px;
-}
-#res{
     border-style: none ;
     height: 100px;
     width: 290px;
@@ -61,8 +39,9 @@ header{
     font-size:4vh;          
     display: flex;
     align-items: center;   
-    justify-content: right;  
+    justify-content: space-between;  
 }
+
 #click{
     display: flex;
     justify-content: space-between;
@@ -198,9 +177,28 @@ footer {
     
   }
 
-  #historico{
-    display: none;
-  }
+#btnHistorico{
+    margin: 0 0 5px 250px;
+}
+#historico{
+    opacity: 0;
+    margin: 10px 0 0 20px;
+    font-size: .4em;
+    max-height: 80px;
+    max-width: 200px;
+    overflow: auto;
+}
 
+::-webkit-scrollbar {
+    width: 2px; /* Largura da barra de rolagem */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Cor do preenchimento da barra de rolagem */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #c8c8d8; /* Cor de fundo da área da barra de rolagem */
+  }
   
   
