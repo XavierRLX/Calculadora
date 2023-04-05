@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Estilo/style.css">
     <title>Calculadora</title>
 </head>
+
 <body id="corpo">
     <header>
         <div id="calc-png">
-            <img src="matematica.png">
+            <img src="imgs/matematica.png">
         </div>
-
-        
-
         <div class="switch">
             <input type="checkbox" id="switch" />
             <label for="switch"></label>
-          </div>
+        </div>
     </header>
     <div class="centered-div">
         <section id="section">
             <div id="resposta">
                 <div id="historico"></div>
                 <div>
-                <p id="res" ></p>
+                    <p id="res"></p>
                 </div>
             </div>
             <div>
-            <img id="btnHistorico" src="historia.png" alt="btn_historico">
-          </div>
+                <img id="btnHistorico" src="imgs/historia.png" alt="btn_historico">
+            </div>
             <div id="click">
                 <p id="x" onclick="clean()"> C </p>
                 <p id="apagar" onclick="back()">X</p>
             </div>
             <div id="flexbox">
-                <p  class="botao" onclick="insert('7')" > 7 </p>
-                <p  class="botao" onclick="insert('8')" > 8 </p>
-                <p  class="botao" onclick="insert('9')" > 9 </p>
-                <p  class="botao" onclick="insert('+')" > + </p>
-                <p  class="botao" onclick="insert('4')" > 4 </p>
-                <p class="botao" onclick="insert('5')" > 5 </p>
-                <p class="botao" onclick="insert('6')" > 6 </p>
-                <p  class="botao" onclick="insert('*')" > * </p>
-                <p class="botao"onclick="insert('1')"  > 1 </p>
-                <p  class="botao" onclick="insert('2')" > 2 </p>
-                <p class="botao" onclick="insert('3')" > 3 </p>
-                <p  class="botao" onclick="insert('-')"> - </p>
-                <p  class="botao" onclick="insert('.')" > . </p>
-                <p class="botao" onclick="insert('0')" > 0 </p>
-                <p  class="botao" onclick="insert('/')" > / </p>
+                <p class="botao" onclick="insert('7')"> 7 </p>
+                <p class="botao" onclick="insert('8')"> 8 </p>
+                <p class="botao" onclick="insert('9')"> 9 </p>
+                <p class="botao" onclick="insert('+')"> + </p>
+                <p class="botao" onclick="insert('4')"> 4 </p>
+                <p class="botao" onclick="insert('5')"> 5 </p>
+                <p class="botao" onclick="insert('6')"> 6 </p>
+                <p class="botao" onclick="insert('*')"> * </p>
+                <p class="botao" onclick="insert('1')"> 1 </p>
+                <p class="botao" onclick="insert('2')"> 2 </p>
+                <p class="botao" onclick="insert('3')"> 3 </p>
+                <p class="botao" onclick="insert('-')"> - </p>
+                <p class="botao" onclick="insert('.')"> . </p>
+                <p class="botao" onclick="insert('0')"> 0 </p>
+                <p class="botao" onclick="insert('/')"> / </p>
                 <p id="igual" class="botao" onclick="calcular()"> = </p>
             </div>
             <div id="nome">
@@ -58,11 +57,15 @@
             </div>
         </section>
     </div>
-    
+
     <footer>
-        <div id="renan"><h2>Desenvolvido por <a target="_blanck" href="https://xavierrlx.github.io/portifolio/">Renan Xavier</a></h2></div>
+        <div id="renan">
+            <h2>Desenvolvido por <a target="_blanck" href="https://xavierrlx.github.io/portifolio/">Renan Xavier</a>
+            </h2>
+        </div>
     </footer>
     <script src="JS/calc.js"></script>
     <script src="JS/tema.js"></script>
 </body>
+
 </html>

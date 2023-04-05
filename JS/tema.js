@@ -17,7 +17,7 @@ function temaEscuro() {
   tela.style.backgroundColor = '#c8c8d8';
   re.style.textDecorationColor = '#c8c8d8';
   xs.style.textDecorationColor = '#c8c8d8';
-  corp.style.backgroundColor = '#ffffff';
+  corp.style.backgroundColor = '#c8c8d8';
 }
 
 function temaClaro() {
@@ -29,7 +29,7 @@ function temaClaro() {
   tela.style.backgroundColor = '#464649';
   re.style.textDecorationColor = '#464649';
   xs.style.textDecorationColor = 'red';
-  corp.style.backgroundColor = '#343a4b';
+  corp.style.backgroundColor = '#464649';
 }
 
 switchBtn.addEventListener("change", function() {
