@@ -220,13 +220,13 @@ footer {
   
   @media (max-width: 600px) {
     #section {
-      transform: scale(1.5);
+      transform: scale(1.3);
     }
   }
 
   @media (max-width: 600px) {
     #section {
-      transform: scale(1.5);
+      transform: scale(1.3);
     }
   }
   
