@@ -95,34 +95,34 @@ function mostrarHistorico() {
 document.getElementById("btnHistorico").addEventListener("click", mostrarHistorico);
 
 
-// Adiciona um ouvinte de eventos de teclado ao documento
-document.addEventListener('keydown', function (event) {
-    // Obtém o código da tecla pressionada
-    var key = event.key;
+// // Adiciona um ouvinte de eventos de teclado ao documento
+// document.addEventListener('keydown', function (event) {
+//     // Obtém o código da tecla pressionada
+//     var key = event.key;
 
-    // Ignora as teclas de função (F1, F2, etc.)
-    if (event.key.startsWith('F')) {
-        return;
-    }
+//     // Ignora as teclas de função (F1, F2, etc.)
+//     if (event.key.startsWith('F')) {
+//         return;
+//     }
 
-    // Verifica se a tecla pressionada é um número ou um dos símbolos específicos
-    if (/[\d+\-*\/]/.test(key)) {
-        event.preventDefault(); // Evita o comportamento padrão da tecla (por exemplo, evitar a entrada em um campo de texto)
-        insert(key);
-    }
+//     // Verifica se a tecla pressionada é um número ou um dos símbolos específicos
+//     if (/[\d+\-*\/]/.test(key)) {
+//         event.preventDefault(); // Evita o comportamento padrão da tecla (por exemplo, evitar a entrada em um campo de texto)
+//         insert(key);
+//     }
 
-    // Se a tecla pressionada for "Backspace", chama a função back
-    if (key === 'Backspace') {
-        event.preventDefault();
-        back();
-    }
+//     // Se a tecla pressionada for "Backspace", chama a função back
+//     if (key === 'Backspace') {
+//         event.preventDefault();
+//         back();
+//     }
 
-    // Se a tecla pressionada for "Enter" ou "=", chama a função calcular
-    if (key === 'Enter' || key === '=') {
-        event.preventDefault();
-        calcular();
-    }
-});
+//     // Se a tecla pressionada for "Enter" ou "=", chama a função calcular
+//     if (key === 'Enter' || key === '=') {
+//         event.preventDefault();
+//         calcular();
+//     }
+// });
 
 
 // Carrega os dados salvos ao carregar a página
