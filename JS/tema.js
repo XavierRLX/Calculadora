@@ -7,9 +7,13 @@ var xs = document.getElementById('x');
 var tela = document.getElementById('resposta');
 var re = document.getElementById('res');
 var corp = document.getElementById('corpo');
+var mdclaro = document.getElementById('imgclaro');
+var mdescuro = document.getElementById('imgescuro');
 
 function temaEscuro() {
   imgCalc.style.filter = "invert(0%)";
+  mdclaro.style.filter= "invert(0%)";
+  mdescuro.style.filter= "invert(0%)";
   bts.style.backgroundColor = '#f50d0d';
   todos.style.backgroundColor = '#3737f3';
   sec.style.backgroundColor = '#c8c8d8';
@@ -22,6 +26,8 @@ function temaEscuro() {
 
 function temaClaro() {
   imgCalc.style.filter = "invert(100%)";
+  mdclaro.style.filter= "invert(100%)";
+  mdescuro.style.filter= "invert(100%)";
   bts.style.backgroundColor = '#970808';
   todos.style.backgroundColor = '#1d1d99';
   sec.style.backgroundColor = '#464649';

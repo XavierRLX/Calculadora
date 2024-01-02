@@ -1,68 +1,129 @@
 
-// função para adicionar um número ou operador ao visor da calculadora
+
+// Função para adicionar um número ou operador ao visor da calculadora
 function insert(num) {
-    var numero = document.getElementById('res').innerHTML;
+    var visor = document.getElementById('res');
+    var expressaoAtual = visor.innerHTML;
 
     // Verifica se o visor está vazio e o número ou operador é um sinal ou ponto decimal, e retorna sem fazer nada
-    if (numero == '' && /[\.\+\-\*\/]/.test(num)) {
-      return;
+    if (expressaoAtual === '' && /[\.\+\-\*\/]/.test(num)) {
+        return;
     }
 
-    // Adiciona o número ou operador ao visor
-    document.getElementById('res').innerHTML = numero + num;
-
-    // Verifica se o último caractere é um operador e o número ou operador atual também é um operador, e substitui o último caractere pelo atual
-    if (/[\+\-\*\/]/.test(numero.slice(-1)) && /[\+\-\*\/]/.test(num)) {
-      document.getElementById('res').innerHTML = numero.slice(0, -1) + num;
+    // Limita o comprimento total (número digitado + resultado exibido) a 15 caracteres
+    if ((expressaoAtual + num).length <= 10) {
+        // Adiciona o número ou operador ao visor
+        visor.innerHTML = expressaoAtual + num;
     }
 }
 
-  function clean() {
-    document.getElementById('res').innerHTML = "" // limpa o valor atual
-    document.getElementById('historico').innerHTML = ""; // limpa o histórico de operações
-    localStorage.removeItem('resultado'); // remove o valor atual do localStorage
-    localStorage.removeItem('historico'); // remove o histórico do localStorage
+// Função para limpar o visor e o histórico da calculadora
+function clean() {
+    document.getElementById('res').innerHTML = '';
+    document.getElementById('historico').innerHTML = '';
+    localStorage.removeItem('resultado');
+    localStorage.removeItem('historico');
 }
 
+// Função para remover o último caractere do visor
 function back() {
-    var resultado = document.getElementById('res').innerHTML; // obtém o valor atual
-    document.getElementById('res').innerHTML = resultado.substring(0, resultado.length - 1); // remove o último caractere
+    var visor = document.getElementById('res');
+    var expressaoAtual = visor.innerHTML;
+    visor.innerHTML = expressaoAtual.substring(0, expressaoAtual.length - 1);
 }
 
+// Função para formatar números
+function formatarNumero(numero) {
+    return numero.toLocaleString('pt-BR');
+}
+
+// Função para realizar o cálculo da expressão no visor
 function calcular() {
-    var resultado = document.getElementById("res").innerHTML.trim(); // obtém o valor atual, removendo espaços em branco no início e no final
-    if (resultado) { // verifica se o valor atual é válido
-        var historico = document.getElementById("historico"); // obtém o elemento do histórico de operações
-        var novoResultado = eval(resultado); // calcula o resultado da expressão
-        if (/[\+\-\*\/]/.test(resultado)) { // verifica se a expressão possui algum operador
-            if (novoResultado.toString().indexOf('.') !== -1) { // verifica se o resultado possui ponto decimal
-                novoResultado = novoResultado.toFixed(2); // arredonda o resultado para duas casas decimais
+    var resposta = document.getElementById("res");
+    var expressao = resposta.innerText;
+
+    try {
+        // Avalia a expressão matemática
+        var resultado = eval(expressao);
+
+        // Verifica se o resultado é um número
+        if (typeof resultado === 'number' && !isNaN(resultado)) {
+            // Formata o resultado antes de exibi-lo
+            var resultadoFormatado = formatarNumero(resultado);
+
+            // Limita o resultado a 15 caracteres
+            if (resultadoFormatado.length > 10) {
+                resultadoFormatado = resultadoFormatado.substring(0, 15);
             }
-            historico.innerHTML += resultado + " = " + novoResultado + "<br>"; // adiciona a expressão e o resultado ao histórico
+
+            resposta.innerText = resultadoFormatado;
+
+            // Adiciona a expressão e o resultado ao histórico
+            var historico = document.getElementById("historico");
+            historico.innerHTML += expressao + " = " + resposta.innerText + "<br>";
+
+            // Salva o histórico no localStorage
+            localStorage.setItem('historico', historico.innerHTML);
+        } else {
+            resposta.innerText = 'Erro';
         }
-        document.getElementById("res").innerHTML = novoResultado; // atualiza o valor atual com o resultado
-    } else {
-        document.getElementById("res").innerHTML = "0"; // se o valor atual for vazio, atualiza com zero
+    } catch (error) {
+        resposta.innerText = 'Erro';
     }
-    localStorage.setItem('resultado', novoResultado); // salva o valor atual no localStorage
-    localStorage.setItem('historico', historico.innerHTML); // salva o histórico de operações no localStorage
 }
 
-var resultadoSalvo = localStorage.getItem('resultado'); // obtém o valor atual salvo no localStorage
-if (resultadoSalvo) {
-    document.getElementById('res').innerHTML = resultadoSalvo; // se houver valor salvo, atualiza o valor atual
-}
-var historicoSalvo = localStorage.getItem('historico'); // obtém o histórico de operações salvo no localStorage
-if (historicoSalvo) {
-    document.getElementById('historico').innerHTML = historicoSalvo; // se houver histórico salvo, atualiza o histórico de operações
+// Carrega o valor atual e o histórico salvos no localStorage ao carregar a página
+function carregarDadosSalvos() {
+    var resultadoSalvo = localStorage.getItem('resultado');
+    if (resultadoSalvo) {
+        document.getElementById('res').innerHTML = resultadoSalvo;
+    }
+
+    var historicoSalvo = localStorage.getItem('historico');
+    if (historicoSalvo) {
+        document.getElementById('historico').innerHTML = historicoSalvo;
+    }
 }
 
+// Mostra ou esconde o histórico de operações
 function mostrarHistorico() {
-    var historico = document.getElementById("historico"); // obtém o elemento do histórico de operações
-    if (historico.style.opacity === "0") { // verifica se o histórico está escondido
-        historico.style.opacity = "1"; // se estiver, mostra o histórico
-    } else {
-        historico.style.opacity = "0"; // se não estiver, esconde o histórico
-    }
+    var historico = document.getElementById("historico");
+    historico.style.opacity = (historico.style.opacity === "0") ? "1" : "0";
 }
-document.getElementById("btnHistorico").addEventListener("click", mostrarHistorico); // adiciona um evento de clique ao botão de histórico  
+
+// Adiciona um evento de clique ao botão de histórico
+document.getElementById("btnHistorico").addEventListener("click", mostrarHistorico);
+
+
+// Adiciona um ouvinte de eventos de teclado ao documento
+document.addEventListener('keydown', function (event) {
+    // Obtém o código da tecla pressionada
+    var key = event.key;
+
+    // Ignora as teclas de função (F1, F2, etc.)
+    if (event.key.startsWith('F')) {
+        return;
+    }
+
+    // Verifica se a tecla pressionada é um número ou um dos símbolos específicos
+    if (/[\d+\-*\/]/.test(key)) {
+        event.preventDefault(); // Evita o comportamento padrão da tecla (por exemplo, evitar a entrada em um campo de texto)
+        insert(key);
+    }
+
+    // Se a tecla pressionada for "Backspace", chama a função back
+    if (key === 'Backspace') {
+        event.preventDefault();
+        back();
+    }
+
+    // Se a tecla pressionada for "Enter" ou "=", chama a função calcular
+    if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calcular();
+    }
+});
+
+
+// Carrega os dados salvos ao carregar a página
+carregarDadosSalvos();

@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Estilo/style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="img/matematica.png" type="image/x-icon">
     <title>Calculadora</title>
 </head>
 
 <body id="corpo">
     <header>
         <div id="calc-png">
-            <img src="imgs/matematica.png">
+            <img src="img/matematica.png">
         </div>
-        <div class="switch">
-            <input type="checkbox" id="switch" />
-            <label for="switch"></label>
+        <div class="opcoes">
+            <div class="opcoesA">
+                <img id="imgescuro" src="img/modo-escuro.png" alt="">
+            </div>
+            <div class="switch">
+                <input type="checkbox" id="switch" >
+                <label for="switch"></label>
+            </div>
+            <div class="opcoesA">
+                <img id="imgclaro" src="img/modo-claro.png" alt="">
+            </div>
         </div>
     </header>
     <div class="centered-div">
@@ -28,11 +37,11 @@
                 </div>
             </div>
             <div>
-                <img id="btnHistorico" src="imgs/historia.png" alt="btn_historico">
+                <img id="btnHistorico" src="img/historia.png" alt="btn_historico">
             </div>
             <div id="click">
-                <p id="x" onclick="clean()"> C </p>
-                <p id="apagar" onclick="back()">X</p>
+                <p id="x" onclick="clean()"> X </p>
+                <p id="apagar" onclick="back()"><</p>
             </div>
             <div id="flexbox">
                 <p class="botao" onclick="insert('7')"> 7 </p>
@@ -64,8 +73,8 @@
             </h2>
         </div>
     </footer>
-    <script src="JS/calc.js"></script>
-    <script src="JS/tema.js"></script>
+    <script src="js/calc.js"></script>
+    <script src="js/tema.js"></script>
 </body>
 
 </html>

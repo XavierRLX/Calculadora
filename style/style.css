@@ -3,16 +3,31 @@
     margin: 0;
     padding: 0;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
 header{
     display: flex;
     align-items: center;
-    justify-content:space-between ;
+    justify-content:space-between ;max-width: 1200px;
+  margin: 0 auto;
 }
 #corpo{
     background-color: #464649;
     font-family: 'Montserrat', sans-serif;
     font-weight: 550;
+}
+.opcoes{
+  display: flex;
+  align-items: center;
+
+}
+.opcoesA > img{
+  filter: invert(100%);
+  width: 28px;
+  height: 28px;
+ display: flex;
+align-items: center;
+padding: 0 8px 0 8px ;
 }
 #calc-png{
     margin: 20px;
@@ -47,7 +62,6 @@ header{
 #click{
     display: flex;
     justify-content: space-between;
-    margin: 0px 10px 3px 10px;
     background-color: #000000;
 }
 #x{
@@ -185,6 +199,7 @@ footer {
 #historico{
     opacity: 0;
     margin: 10px 0 0 20px;
+    text-align: left;
     font-size: .4em;
     max-height: 80px;
     max-width: 200px;
